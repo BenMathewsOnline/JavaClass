@@ -2,37 +2,39 @@ package com.company;
 
 public class Main
 {
-
     public static void main(String[] args)
     {
-        java.util.Scanner input = new java.util.Scanner(System.in);
-        System.out.println("Welcome to Ed's Wholesale String Cheese");
-        System.out.println("=======================================");
-        System.out.println("we have 1 inch cheese, 2 inch cheese, or 3 inch cheese");
-        System.out.println("the prices are $2 a yard, $4 a yard, or $6 a yard, respectively");
-        System.out.println("shipping is $2 per yard for the 1 and 2 inch, and $4 for 3 inch");
-        System.out.println("Shipping's free with 50 yards + of 1 inch, 75 yards + of 2 inch, and 25 yards + of 3 inch");
-        System.out.println("What size cheese do you want? Choose 1, 2, or 3 inch.");
-        String cheeseType = input.next();
-
-        switch (cheeseType)
+        boolean isTrue = true;
+        do
         {
-            case "1":
-                oneInch();
-                break;
+            java.util.Scanner input = new java.util.Scanner(System.in);
+            System.out.println("Welcome to Ed's Wholesale String Cheese");
+            System.out.println("=======================================");
+            System.out.println("we have 1 inch cheese, 2 inch cheese, or 3 inch cheese");
+            System.out.println("the prices are $2 a yard, $4 a yard, or $6 a yard, respectively");
+            System.out.println("shipping is $2 per yard for the 1 and 2 inch, and $4 for 3 inch");
+            System.out.println("Shipping's free with 50 yards + of 1 inch, 75 yards + of 2 inch, and 25 yards + of 3 inch");
+            System.out.println("What size cheese do you want? Choose 1, 2, or 3 inch.");
+            String cheeseType = input.next();
 
-            case "2":
-                twoInch();
-                break;
+            switch (cheeseType)
+            {
+                case "1":
+                    oneInch();
+                    break;
 
-            case "3":
-                threeInch();
-                break;
+                case "2":
+                    twoInch();
+                    break;
 
-            default:
-                System.out.println("Order is too crazy!!!");
-        }
+                case "3":
+                    threeInch();
+                    break;
 
+                default:
+                    System.out.println("Order is too crazy!!!");
+            }
+        }while (isTrue == true);
     }
 
     private static int shippingCostOneInch(int x)
@@ -99,6 +101,7 @@ public class Main
     {
         System.out.println("you've ordered string " + x + " inch string cheese." );
         System.out.println("Your cheese cost and shipping total is $" + y + ". Thank you!");
+        System.out.println();
     }
 
 }
